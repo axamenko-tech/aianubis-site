@@ -47,15 +47,22 @@ h1{font-size:clamp(25px,5vw,54px);line-height:1.14;letter-spacing:-.04em;font-we
 #uslugi{padding-top:clamp(20px,4vw,44px);scroll-margin-top:0}
 h2{font-size:clamp(26px,3.8vw,40px);line-height:1.12;letter-spacing:-.03em;font-weight:700}
 .lead{margin-top:6px;color:var(--muted)}
-.list{margin-top:clamp(16px,2.6vw,28px);display:grid;gap:8px}
-.row{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:13px 16px;border-radius:18px;background:var(--panel);text-decoration:none;transition:background .2s,transform .2s}
-.row:hover{background:#e9edff;transform:translateY(-2px)}
-.t{min-width:0;display:grid;gap:1px}.t b{font-weight:700;font-size:16px;line-height:1.25;letter-spacing:-.01em}.t small{color:var(--muted);font-size:13px;line-height:1.3}
-.p{flex:none;font-weight:800;font-size:17px;letter-spacing:-.02em;color:var(--blue);white-space:nowrap;font-variant-numeric:tabular-nums}
-li:last-child .row{background:var(--navy);color:#fff}li:last-child .t small{color:var(--soft)}li:last-child .p{color:var(--yellow)}
+.list{margin-top:clamp(16px,2.6vw,28px);display:grid;gap:12px}
+.row{display:grid;gap:8px;padding:16px;border-radius:20px;background:#fff;border:1px solid var(--line);text-decoration:none;transition:box-shadow .2s,transform .2s}
+.row:hover{transform:translateY(-2px);box-shadow:0 14px 30px -20px rgba(11,16,51,.5)}
+.row>span{display:block;min-width:0}
+.row>.top{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+.top b{font-weight:700;font-size:17px;line-height:1.25;letter-spacing:-.01em}
+.p{flex:none;font-weight:800;font-size:20px;letter-spacing:-.02em;color:var(--blue);white-space:nowrap;font-variant-numeric:tabular-nums}
+.meta{font-size:13px;color:var(--muted)}
+.q,.a{font-size:15px;line-height:1.4}.q{font-weight:600}
+.row>.tag{justify-self:start;padding:3px 10px;border-radius:999px;background:#def5e7;color:#0d7040;font-size:12.5px;font-weight:600}
+.row>.tag.g{background:#eef0f3;color:#3f4454}
+li:nth-child(3) .row{background:#eef1ff;border-color:#d8deff}
+li:last-child .row{background:var(--navy);border-color:var(--navy);color:#fff}li:last-child .meta{color:var(--soft)}li:last-child .p{color:var(--yellow)}li:last-child .row>.tag{background:rgba(92,239,166,.16);color:#5cefa6}
 .note{margin-top:12px;padding:12px 16px;border-radius:18px;background:var(--yellow);font-size:15px;font-weight:600;text-align:center}
 .foot{padding-block:28px;font-size:14px;color:var(--muted)}.foot .wrap{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:center;text-align:center}
-@media(min-width:760px){.chips{grid-template-columns:repeat(5,minmax(0,1fr))}.chip:last-child{grid-column:auto;display:grid;gap:0;justify-content:stretch}.row{padding:18px 24px}.t b{font-size:19px}.t small{font-size:15px}.p{font-size:24px}}
+@media(min-width:760px){.chips{grid-template-columns:repeat(5,minmax(0,1fr))}.chip:last-child{grid-column:auto;display:grid;gap:0;justify-content:stretch}.row{padding:22px 24px}.top b{font-size:20px}.p{font-size:24px}.q,.a{font-size:16px}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
@@ -76,9 +83,9 @@ li:last-child .row{background:var(--navy);color:#fff}li:last-child .t small{colo
   </div>
   <div class="chips">
       <a class="chip" href="#s1"><span>Консультация</span><b>5 000 ₽</b></a>
-      <a class="chip" href="#s2"><span>Настройка</span><b>10 000 ₽</b></a>
-      <a class="chip" href="#s3"><span>Обучение</span><b>25 000 ₽</b></a>
-      <a class="chip" href="#s4"><span>Оптимизация</span><b>30 000 ₽</b></a>
+      <a class="chip" href="#s2"><span>Настройка ИИ</span><b>10 000 ₽</b></a>
+      <a class="chip" href="#s3"><span>Обучение ИИ</span><b>25 000 ₽</b></a>
+      <a class="chip" href="#s4"><span>Доработка проекта</span><b>30 000 ₽</b></a>
       <a class="chip" href="#s5"><span>Автоматизация бизнеса</span><b>75 000 ₽</b></a>
   </div>
 </div>
@@ -88,11 +95,11 @@ li:last-child .row{background:var(--navy);color:#fff}li:last-child .t small{colo
   <h2>Услуги и цены</h2>
   <p class="lead">Выберите, что вам нужно, и напишите мне.</p>
   <ul class="list">
-    <li id="s1"><a class="row" href="https://t.me/anubis_ok?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%3A%20%D0%9A%D0%BE%D0%BD%D1%81%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%86%D0%B8%D1%8F"><span class="t"><b>Консультация</b><small>30 минут созвона: разберём вашу задачу и решим, что с ней делать</small></span><span class="p">5 000 ₽</span></a></li>
-    <li id="s2"><a class="row" href="https://t.me/anubis_ok?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%3A%20%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0%20%D0%BF%D0%BE%D0%B4%20%D0%B2%D0%B0%D1%88%D0%B8%20%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B8"><span class="t"><b>Настройка под ваши задачи</b><small>Лично настрою ИИ под вашу работу. Например, установлю ИИ-помощника на ваш сервер, подключу его к рабочим сервисам или соберу бота для рутинных задач</small></span><span class="p">10 000 ₽</span></a></li>
-    <li id="s3"><a class="row" href="https://t.me/anubis_ok?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%3A%20%D0%9E%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B5%20%D1%81%20%D0%BD%D0%B5%D0%B9%D1%80%D0%BE%D1%81%D0%B5%D1%82%D1%8F%D0%BC%D0%B8"><span class="t"><b>Обучение работе с нейросетями</b><small>Созвоны в Zoom: научу правильно формулировать запросы и работать с нейросетями</small></span><span class="p">25 000 ₽</span></a></li>
-    <li id="s4"><a class="row" href="https://t.me/anubis_ok?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%3A%20%D0%9E%D0%BF%D1%82%D0%B8%D0%BC%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F%20%D0%B4%D0%B5%D0%B9%D1%81%D1%82%D0%B2%D1%83%D1%8E%D1%89%D0%B8%D1%85%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%BE%D0%B2"><span class="t"><b>Оптимизация действующих проектов</b><small>Есть проект, но не хватает знаний, чтобы его доработать? Разберусь и сделаю работу за вас</small></span><span class="p">30 000 ₽</span></a></li>
-    <li id="s5"><a class="row" href="https://t.me/anubis_ok?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%3A%20%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F%20%D1%80%D0%B0%D0%B1%D0%BE%D1%87%D0%B8%D1%85%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%BE%D0%B2"><span class="t"><b>Автоматизация рабочих проектов</b><small>Настрою автоматическую работу процессов внутри вашего бизнеса</small></span><span class="p">75 000 ₽</span></a></li>
+    <li id="s1"><a class="row" href="https://t.me/anubis_ok?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%3A%20%D0%9A%D0%BE%D0%BD%D1%81%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%86%D0%B8%D1%8F"><span class="top"><b>Консультация</b><span class="p">5 000 ₽</span></span><span class="meta">30 минут · Онлайн</span><span class="q">Есть задача, но не знаете, как решить её с помощью ИИ?</span><span class="a">Разберём вашу ситуацию, подберём подходящие инструменты и определим, с чего начать.</span><span class="tag">Для тех, кому нужен план действий</span></a></li>
+    <li id="s2"><a class="row" href="https://t.me/anubis_ok?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%3A%20%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0%20%D0%98%D0%98%20%D0%BF%D0%BE%D0%B4%20%D0%B2%D0%B0%D1%88%D0%B8%20%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B8"><span class="top"><b>Настройка ИИ под ваши задачи</b><span class="p">10 000 ₽</span></span><span class="meta">Настройка под конкретную задачу</span><span class="q">Нужно, чтобы ИИ уже работал, а не просто был установлен?</span><span class="a">Настрою ИИ-помощника, подключу необходимые сервисы или создам бота для выполнения повседневных задач.</span><span class="tag g">Для тех, кому нужен готовый инструмент</span></a></li>
+    <li id="s3"><a class="row" href="https://t.me/anubis_ok?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%3A%20%D0%98%D0%BD%D0%B4%D0%B8%D0%B2%D0%B8%D0%B4%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%98%D0%98"><span class="top"><b>Индивидуальное обучение ИИ</b><span class="p">25 000 ₽</span></span><span class="meta">Персональные занятия в Zoom</span><span class="q">Хотите самостоятельно пользоваться ChatGPT, Claude и Claude Code?</span><span class="a">Научу работать с нейросетями, правильно ставить задачи, создавать проекты и применять ИИ в работе и повседневной жизни.</span><span class="tag">Для тех, кто хочет освоить ИИ самостоятельно</span></a></li>
+    <li id="s4"><a class="row" href="https://t.me/anubis_ok?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%3A%20%D0%94%D0%BE%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0%20%D0%B2%D0%B0%D1%88%D0%B5%D0%B3%D0%BE%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B0"><span class="top"><b>Доработка вашего проекта</b><span class="p">30 000 ₽</span></span><span class="meta">Работа с существующим проектом</span><span class="q">Уже есть сайт, бот или приложение, но что-то работает не так или не хватает нужных функций?</span><span class="a">Разберусь в проекте, исправлю проблемы и доработаю его под ваши задачи.</span><span class="tag g">Для тех, у кого уже есть свой проект</span></a></li>
+    <li id="s5"><a class="row" href="https://t.me/anubis_ok?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%3A%20%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F%20%D0%B1%D0%B8%D0%B7%D0%BD%D0%B5%D1%81%D0%B0"><span class="top"><b>Автоматизация бизнеса</b><span class="p">75 000 ₽</span></span><span class="meta">Комплексное внедрение</span><span class="q">Хотите сократить ручную работу и автоматизировать процессы в компании?</span><span class="a">Разработаю систему автоматизации с использованием ИИ, настрою взаимодействие между сервисами и помогу выстроить рабочие процессы.</span><span class="tag">Для предпринимателей и компаний</span></a></li>
   </ul>
   <p class="note">Хотите научиться монтировать Reels? <a href="kurs.html">Курс по ИИ-монтажу от 2 222 ₽</a></p>
 </div></section>
